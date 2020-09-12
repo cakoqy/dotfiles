@@ -1,0 +1,12 @@
+#!/bin/dash
+
+pgrep compton
+if [ "x"`pgrep compton` = "x" ]; then
+    echo "Turning compton ON"
+    compton -b --config $HOME/.config/compton.conf
+else
+    echo "Turning compton OFF"
+    pkill compton &
+fi
+
+exit 0
