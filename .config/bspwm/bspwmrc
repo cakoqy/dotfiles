@@ -1,0 +1,28 @@
+#! /bin/sh
+
+sxhkd &
+compton &
+xset r rate 350 35 &
+xset s 2400 &
+setxkbmap -option "ctrl:nocaps" jp &
+xinput set-button-map 9 1 2 3 4 5 6 7 8 9 1 10 2 &
+
+bspc monitor HDMI-0 -d I II III IV V
+bspc monitor DVI-I-1 -d VI VII VIII IX X XI XII
+bspc monitor DVI-D-0 -d XIII XIV XV XVI XVII
+
+bspc config border_width         2
+bspc config window_gap          8
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focus_follows_pointer true
+
+bspc rule -a mpv state=floating
+bspc rule -a KeePassXC state=floating
+
+feh --bg-scale $HOME/.wallpaper/wallpaper.jpg
+$HOME/.config/polybar/launch.sh
+redshift-gtk -l 35:135 &
