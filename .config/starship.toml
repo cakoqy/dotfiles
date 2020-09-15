@@ -1,0 +1,9 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[directory]
+# The number of parent folders that the current directory should be truncated to.
+truncation_length = 1
+
+[rust]
+symbol = "⚙️ "
