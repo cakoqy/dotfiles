@@ -103,6 +103,17 @@ Plug 'easymotion/vim-easymotion'
     nmap <silent> [fzf]g :<C-u>Rg<CR>
     nmap <silent> [fzf]h :<C-u>History<CR>
 " }}}
+" " Skim: {{{
+"     Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+"     Plug 'lotabout/skim.vim'
+"     nmap [skim] <Nop>
+"     map <Leader>f [skim]
+"     nmap <silent> [skim]f :<C-u>Files<CR>
+"     nmap <silent> [skim]b :<C-u>Buffers<CR>
+"     nmap <silent> [skim]g :<C-u>Rg<CR>
+"     nmap <silent> [skim]h :<C-u>History<CR>
+"     let g:skim_layout = { 'window': '10new' }
+" " }}}
 " Eskk: {{{
     Plug 'tyru/eskk.vim'
     let g:eskk#directory = '~/.eskk'
@@ -225,6 +236,9 @@ Plug 'easymotion/vim-easymotion'
     let g:pydocstring_formatter = 'numpy'  " sphinx, numpy, google
     let g:pydocstring_doq_path = '.venv/bin/doq'
 "
+" }}}
+" Toml: {{{
+    Plug 'cespare/vim-toml'
 " }}}
 call plug#end()
 " }}}
