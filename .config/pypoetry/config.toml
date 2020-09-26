@@ -1,0 +1,6 @@
+[virtualenvs]
+in-project = true
+
+[repositories]
+[repositories.localpypi]
+url = "http://localhost:8082/"

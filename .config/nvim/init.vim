@@ -27,10 +27,10 @@ call plug#begin('~/.config/nvim/plugged')
     let g:ale_fix_on_save = 1
     " let g:ale_completion_enabled = 1
     let g:ale_linters = {
-          \ 'python': ['flake8', 'pylint', 'pydocstyle'],
+          \ 'python': ['flake8', 'pydocstyle', 'darglint'],
           \ }
     let g:ale_fixers = {
-          \ 'python': ['autopep8', 'black', 'isort', 'trim_whitespace', 'yapf'],
+          \ 'python': ['autopep8', 'trim_whitespace', 'black', 'isort'],
           \ }
 
     let g:ale_go_langserver_executable = 'gopls'
@@ -231,11 +231,13 @@ Plug 'easymotion/vim-easymotion'
 " VimRepeat: {{{
     Plug 'tpope/vim-repeat'
 " }}}
+" Python-pep8-indent: {{{
+    Plug 'Vimjas/vim-python-pep8-indent'
+" }}}
 " Pydoc: {{{
     Plug 'heavenshell/vim-pydocstring', { 'for': 'python' }
-    let g:pydocstring_formatter = 'numpy'  " sphinx, numpy, google
+    let g:pydocstring_formatter = 'google'  " sphinx, numpy, google
     let g:pydocstring_doq_path = '.venv/bin/doq'
-"
 " }}}
 " Toml: {{{
     Plug 'cespare/vim-toml'
