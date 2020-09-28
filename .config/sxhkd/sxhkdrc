@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + e
-	$HOME/usr/local/bin/alacritty
+	alacritty
 	# $HOME/usr/local/bin/st
 
 # program launcher

@@ -242,6 +242,15 @@ Plug 'easymotion/vim-easymotion'
 " Toml: {{{
     Plug 'cespare/vim-toml'
 " }}}
+" vim-indent-guides: {{{
+    Plug 'nathanaelkane/vim-indent-guides'
+    let g:indent_guides_enable_on_vim_startup = 1
+    augroup MyAutoCmd
+        let g:indent_guides_auto_colors = 0
+        autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd  guibg=red   ctermbg=236
+        autocmd VimEnter,Colorscheme * : hi IndentGuidesEven guibg=green ctermbg=233
+    augroup END
+" }}}
 call plug#end()
 " }}}
 
@@ -339,6 +348,9 @@ set nrformats=
 set title
 set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
+augroup MyAutoCmd
+    autocmd FileType go set nolist
+augroup END
 set laststatus=2
 set cmdheight=1
 set showcmd
@@ -374,6 +386,9 @@ augroup END
 " Syntax: {{{
 set autoindent
 set smartindent
+augroup MyAutoCmd
+    autocmd FileType python setlocal foldmethod=indent
+augroup END
 " }}}
 
 " Mapping: {{{
