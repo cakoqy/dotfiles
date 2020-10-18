@@ -87,11 +87,11 @@ call plug#begin('~/.config/nvim/plugged')
     augroup END
 " }}}
 " Easymotion: {{{
-Plug 'easymotion/vim-easymotion'
-    let g:EasyMotion_do_mapping = 0
-    nmap [easymotion] <Nop>
-    map <Leader>e [easymotion]
-    nmap [easymotion]f <Plug>(easymotion-overwin-f2)
+    Plug 'easymotion/vim-easymotion'
+        let g:EasyMotion_do_mapping = 0
+        nmap [easymotion] <Nop>
+        map <Leader>e [easymotion]
+        nmap [easymotion]f <Plug>(easymotion-overwin-f2)
 " }}}
 " FZF: {{{
     Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
@@ -200,6 +200,9 @@ Plug 'easymotion/vim-easymotion'
 " }}}
 " Markdown-Preview: {{{
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+    let g:mkdp_auto_start = 0
+    let g:mkdp_auto_close = 1
+    let g:mkdp_browser = 'vivaldi'
 " }}}
 " tagbar: {{{
     Plug 'liuchengxu/vista.vim'
@@ -250,6 +253,9 @@ Plug 'easymotion/vim-easymotion'
         autocmd VimEnter,Colorscheme * : hi IndentGuidesOdd  guibg=red   ctermbg=236
         autocmd VimEnter,Colorscheme * : hi IndentGuidesEven guibg=green ctermbg=233
     augroup END
+" }}}
+" Renamer: {{{
+    Plug 'qpkorr/vim-renamer'
 " }}}
 call plug#end()
 " }}}
