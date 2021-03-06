@@ -1,7 +1,7 @@
 #! /bin/sh
 
 sxhkd &
-compton &
+# compton &
 xset r rate 350 35 &
 xset s 2400 &
 setxkbmap -option "ctrl:nocaps" jp &

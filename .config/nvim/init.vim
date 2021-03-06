@@ -143,9 +143,9 @@ call plug#begin('~/.config/nvim/plugged')
 " CAW: {{{
     Plug 'tyru/caw.vim'
 " }}}
-" Table Mode: {{{
-    Plug 'dhruvasagar/vim-table-mode'
-" }}}
+" " Table Mode: {{{
+"     Plug 'dhruvasagar/vim-table-mode'
+" " }}}
 " Snippet: {{{
     " Plug 'SirVer/ultisnips'
     Plug 'Shougo/neosnippet.vim'
@@ -257,6 +257,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Renamer: {{{
     Plug 'qpkorr/vim-renamer'
 " }}}
+" RainbowCSV: {{{
+    Plug 'mechatroner/rainbow_csv'
+" }}}
 call plug#end()
 " }}}
 
@@ -292,18 +295,18 @@ EOF
 " }}}
 
 " lua require'nvim_lsp'.gopls.setup{}
-lua require'nvim_lsp'.gopls.setup{capabilities={
+lua require'lspconfig'.gopls.setup{capabilities={
             \ textDocument={completion={
             \   completionItem={snippetSupport=false}
             \   }}
             \ }}
 " lua require'nvim_lsp'.pyls.setup{cmd={find_virtual_env()}}
-lua require'nvim_lsp'.pyls.setup{}
-lua require'nvim_lsp'.jsonls.setup{}
-lua require'nvim_lsp'.rust_analyzer.setup{}
+lua require'lspconfig'.pyls.setup{}
+lua require'lspconfig'.jsonls.setup{}
+lua require'lspconfig'.rust_analyzer.setup{}
 
 " https://www.reddit.com/r/neovim/comments/gtta9p/neovim_lsp_how_to_disable_diagnostics/
-lua vim.lsp.callbacks["textDocument/publishDiagnostics"] = function () end
+" lua vim.lsp.callbacks["textDocument/publishDiagnostics"] = function () end
 
 " call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 " }}}
